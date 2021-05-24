@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 16:58:58 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/21 20:52:56 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/24 17:18:23 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 # define GET_NEXT_LINE_H
 
+# define OPEN_MAX 256
+
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1
 #endif
 
+#include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
 

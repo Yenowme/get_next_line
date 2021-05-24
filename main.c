@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 15:20:52 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/21 14:37:24 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/24 17:42:21 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,19 @@ int main()
 	int	check;
 	int	fd;
 
-	fd = open("test.txt", O_RDONLY);
+	// fd = open("test.txt", O_RDONLY);
+	fd = 1000;
 	while ((check = get_next_line(fd, &line)) > 0)
 	{
-		printf("read = %s\n", line);
+		printf("read = %s\n rt = %d", line, check);
 		free(line);
 	}
 	if (check == -1)
 	{
-		printf("error");
+		printf("error read = %s \n", line);
 		return (-1);
 	}
-	printf("last = %s\n", line);
+	printf("last = %s\n rt = %dn", line, check);
 	free(line);
 
 	return (1);
