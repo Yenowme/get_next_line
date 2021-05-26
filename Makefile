@@ -25,4 +25,4 @@ re :
 test :
 	gcc -g $(SRCS) -I ./
 
-.PHONY: clean fclean re all bonus
+.PHONY: clean fclean re all bonus test
