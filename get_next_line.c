@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:12:49 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/26 16:40:42 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/26 16:53:59 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	check_tmp(char **tmp, char **line)
 {
 	char	*end;
+	char	*buff;
 
 	if (!*tmp)
 		if (!(*tmp = ft_strdup("")))
@@ -22,10 +23,11 @@ static int	check_tmp(char **tmp, char **line)
 	if ((end = ft_strchr(*tmp, '\n')))
 	{
 		*end = 0;
-		free(*line);
-		*line = *tmp;
+		buff = *tmp;
+		*line = ft_strdup(*tmp);
 		if (!(*tmp = ft_strdup(end + 1)))
 			return (-1);
+		free(buff);
 		return (1);
 	}
 	return (0);
@@ -65,10 +67,10 @@ int	get_next_line(int fd, char **line)
 
 	if (BUFFER_SIZE <= 0 || !line || fd < 0 || fd > OPEN_MAX || read(fd, *line, 0) == -1)
 		return (-1);
-	if (!(*line = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
-		return (-1);
 	if ((rt = check_tmp(&tmp[fd], line)))
 		return (rt);
+	if (!(*line = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
+		return (-1);
 	if ((rd_size = read(fd, *line, BUFFER_SIZE)) == -1)
 		return (-1);
 	while(rd_size > 0)
