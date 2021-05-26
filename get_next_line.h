@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 16:58:58 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/26 16:06:06 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/26 16:40:21 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_line_strjoin(char const *s1, char const *s2);
-char	*ft_tmp_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *src);
 
 int	get_next_line(int fd, char **line);
