@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 17:11:22 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/21 18:29:05 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/26 15:49:57 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_tmp_strjoin(char const *s1, char const *s2)
 {
 	char	*rt;
 	int		i;
@@ -62,6 +62,33 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	rt[i] = 0;
 	free((void*)s1);
 	s1 = 0;
+	return (rt);
+}
+
+char	*ft_line_strjoin(char const *s1, char const *s2)
+{
+	char	*rt;
+	int		i;
+	int		j;
+
+	j = 0;
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	if (!(rt = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		return (0);
+	while (s1[i])
+	{
+		rt[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+		rt[i++] = s2[j++];
+	rt[i] = 0;
+	free((void*)s1);
+	s1 = 0;
+	free((void*)s2);
+	s2 = 0;
 	return (rt);
 }
 

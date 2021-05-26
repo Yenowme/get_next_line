@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:12:49 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/26 14:28:22 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/26 16:08:24 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static int	check_tmp(char **tmp, char **line)
 	if ((end = ft_strchr(*tmp, '\n')))
 	{
 		*end = 0;
-		free(*line);
 		*line = *tmp;
 		if (!(*tmp = ft_strdup(end + 1)))
 			return (-1);
@@ -39,7 +38,7 @@ static int	check_line(char **tmp, char **line)
 	{
 		*end = 0;
 		if (*tmp)
-			if (!(*line = ft_strjoin(*tmp, *line)))
+			if (!(*line = ft_line_strjoin(*tmp, *line)))
 				return (-1);
 		*tmp = ft_strdup(end + 1);
 		return (1);
@@ -49,7 +48,7 @@ static int	check_line(char **tmp, char **line)
 		if (!(*tmp = ft_strdup(*line)))
 			return (-1);
 	}
-	else if (!(*tmp = ft_strjoin(*tmp, *line)))
+	else if (!(*tmp = ft_tmp_strjoin(*tmp, *line)))
 		return (-1);
 	return (0);
 }

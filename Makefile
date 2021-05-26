@@ -25,4 +25,7 @@ re :
 test :
 	gcc -g $(SRCS) -I ./
 
+leak :
+	gcc -g3 -fsanitize=address $(SRCS) -I ./
+
 .PHONY: clean fclean re all bonus test
