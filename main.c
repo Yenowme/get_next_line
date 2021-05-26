@@ -6,7 +6,7 @@
 /*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 15:20:52 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/26 16:05:34 by yejeong          ###   ########.fr       */
+/*   Updated: 2021/05/26 17:36:12 by yejeong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
 	int	fd;
 
 	fd = open("multiple_line_no_nl", O_RDONLY);
+	r
 	// fd = 1000;
 	while ((check = get_next_line(fd, &line)) > 0)
 	{
