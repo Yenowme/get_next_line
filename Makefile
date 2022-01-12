@@ -6,7 +6,7 @@
 #    By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 16:08:55 by jeong-yena        #+#    #+#              #
-#    Updated: 2022/01/12 16:16:05 by jeong-yena       ###   ########.fr        #
+#    Updated: 2022/01/12 17:00:24 by jeong-yena       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ re :
 	make all
 
 test :
-	gcc -g $(SRCS) -I ./
+	gcc -g $(SRCS) main.c -I ./
 
 leak :
 	gcc -g3 -fsanitize=address $(SRCS) -I ./
