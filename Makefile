@@ -1,22 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/12 16:08:55 by jeong-yena        #+#    #+#              #
+#    Updated: 2022/01/12 16:16:05 by jeong-yena       ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	= gnl.a
+
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-SRCS	= get_next_line.c get_next_line_utils.c main.c
+
+SRCS	= get_next_line.c get_next_line_utils.c
 OBJS	= $(SRCS:.c=.o)
-NAME	= a.out
 
 all : $(NAME)
 
-# %.o: %.c
-# 	$(CC) -c -o $@ $(CFLAGS) $< main.c -I./
-
-$(NAME) : $(SRCS)
-	gcc $(CFLAGS) $(SRCS) -I ./
+$(NAME) : $(OBJS)
+	ar rcs $@ $(OBJS)
 
 clean :
 	rm -f $(OBJS) $(OBJS_B)
 
 fclean : clean
-	rm -rf $(NAME) a.out.dSYM
+	rm -rf $(NAME)
 
 re :
 	make fclean

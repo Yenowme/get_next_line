@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yejeong <yejeong@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jeong-yena <jeong-yena@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 15:20:52 by yejeong           #+#    #+#             */
-/*   Updated: 2021/05/26 17:36:12 by yejeong          ###   ########.fr       */
+/*   Updated: 2022/01/12 16:10:07 by jeong-yena       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int main()
 	int	check;
 	int	fd;
 
-	fd = open("multiple_line_no_nl", O_RDONLY);
-	r
+	fd = open("./tests/multiple_line_no_nl", O_RDONLY);
 	// fd = 1000;
 	while ((check = get_next_line(fd, &line)) > 0)
 	{
